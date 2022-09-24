@@ -5,7 +5,23 @@
     --light: #adb5bd;
     --border: #dee2e6;
     --border-btn: #edf2f4;
+    --sailor-blue : #00203FFF;
+    --sailor-blue-light : rgb(40, 92, 145);
+    --mint : #ADEFD1FF;
 }
+
+::placeholder {
+    color: var(--light);
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: var(--light);
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+   color: var(--light);
+  }
 
 * {
     padding: 0;
@@ -24,8 +40,10 @@ a {
 }
 
 .nav-brand{
+    color: #fff;
     font-size: 1.5em;
-    font-weight: bold;
+    font-weight: 400;
+    letter-spacing: .5px;
 }
 
 .d-flex{
@@ -42,8 +60,11 @@ a {
 }
 
 .border-shadow{
-    border: 1px solid var(--border-btn);
-    box-shadow: 1px 3px 10px #e9ecef;
+    border: 1px solid var(--sailor-blue-light);
+}
+
+.border-shadow-delete{
+    border: 1px solid red;
 }
 
 .text-dark{
@@ -59,14 +80,14 @@ a {
 }
 
 .text-gradient{
-    background: linear-gradient(to right, #8e2de2, #4a00e0);
+    background: linear-gradient(to right, #00203FFF, rgb(27, 90, 153));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 #header nav{
-    background-color: #06d6a0;
+    background-color: var(--sailor-blue);
     padding: 1em 0;
     width: 100%;
 }
@@ -104,7 +125,7 @@ table{
 }
 
 .table tr:hover{
-    background-color:#06d6a0 ;
+    background-color: var(--mint) ;
 }
 
 .table tr:hover td > a{
@@ -154,6 +175,7 @@ table{
 #update_user .form-group,
 #add_user .form-group{
     margin: .4em 0;
+    transition: all .6s ease;
 }
 
 #update_user .form-group input[type="text"],
@@ -165,6 +187,14 @@ table{
     font-family: 'Barlow', sans-serif;
     font-size: 1em;
     border-radius: .2em;
+}
+
+
+#update_user .form-group input[type="text"]:focus-visible,
+#add_user .form-group input[type="text"]:focus-visible{
+    outline: none;
+    border: 1px solid var(--sailor-blue);
+    transition: all .6s ease;
 }
 
 #update_user .form-group .radio,
@@ -197,13 +227,13 @@ table{
 }
 
 .radio input[type='radio']:checked + .radio-label:before{
-    background-color: #16db93;
+    background-color: var(--sailor-blue);
     box-shadow: inset 0 0 0 4px #e9ecef;
 }
 
 .radio input[type='radio']:focus + .radio-label:before{
     outline: none;
-    border-color:#16db93;
+    border-color:var(--sailor-blue);
 }
 
 .radio input[type='radio']:disabled + .radio-label:before{
@@ -214,19 +244,81 @@ table{
 
 #update_user .form-group .btn,
 #add_user .form-group .btn{
+    color: var(--mint);
     width: 100%;
     padding: .9em 1em;
-    background-color:#16db93; 
+    background-color: var(--sailor-blue); 
     border: none;
     font-family: 'PT Sans', sans-serif;
     font-size: 1em;
     cursor: pointer;
     border-radius: .2em;
     margin: .5em 0;
+    transition: all .6s ease;
 }
 
 #update_user .form-group .btn:hover,
 #add_user .form-group .btn:hover{
-    background-color: var(--dark);
-    color: var(--border);
+    background-color: var(--mint);
+    color: var(--sailor-blue);
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+
+
+/* Toast message styling */
+
+.toast-wrap{
+    z-index: 100;
+    width: 100%;
+    position: relative;
+    display: none;
+    transition: all .6s ease-in-out;
+}
+
+.toast{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-family: 'PT Sans', sans-serif;
+    width: 400px;
+    height: 80px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .05);
+    border-left:8px solid #47d767;
+    border-radius: 7px;
+    display: grid;
+    grid-template-columns: 1.2fr 6fr .5fr;
+    /* transform: translate(420px); */
+}
+
+.container-1, .container-2{
+    align-self: center;
+}
+
+.container-1 i{
+    font-size: 40px;
+    color: #47d767;
+}
+
+.container-2 p:first-child{
+    color: #101020;
+    font-weight: 600;
+    font-size: 16px;
+}
+.container-2 p:last-child{
+    color: #656565;
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.toast button{
+    align-self: flex-start;
+    border: none;
+    background-color: transparent;
+    font-size: 24px;
+    line-height: 0;
+    color: #656565;
+    cursor: pointer;
 }

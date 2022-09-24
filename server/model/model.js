@@ -10,8 +10,20 @@ var schema = new mongoose.Schema({
         require: true,
         unique: true
     },
+    course: {
+        type: String,
+        require: true,
+    },
+    courseYear: {
+        type: Number,
+        require: true
+    },
+    seatNumber: {
+        type: String,
+        require: true,
+        unique: true
+    },
     gender: String,
-    status: String
 })
 
 const Userdb = mongoose.model('userdb',schema)

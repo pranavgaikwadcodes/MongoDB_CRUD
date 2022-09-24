@@ -4,13 +4,14 @@
     <td><%= users[i].name %></td>
     <td><%= users[i].email %></td>
     <td><%= users[i].gender %></td>
-    <td><%= users[i].status %></td>
+    <td><%= users[i].seatNumber %></td>
+    <td><%= users[i].course %> ( <%= users[i].courseYear %> )</td>
     <td>
-        <a href="/update-user?id=<%= users[i]._id%>" class="btn border-shadow update">
+        <a href="/update-user?id=<%= users[i]._id%>" class="btn update">
             <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
         </a>
-        <a class="btn border-shadow delete" data-id=<%= users[i]._id%> >
-            <span class="text-gradient"><i class="fas fa-times"></i></span>
+        <a class="btn delete" data-id=<%= users[i]._id%> >
+            <span class="text-gradient" style="color: red;"><i class="fas fa-times"></i></span>
         </a>
     </td>
 </tr>

@@ -3,6 +3,28 @@
 <%- include('include/_header') %>
 <!-- /include header -->
 
+
+<!-- Toast message -->
+
+<div class="toast-wrap" id="toast-wrap">
+        
+    <div class="toast" id="toast">
+        <div class="container-1">
+            <i id="icon-block" class="fa-regular fa-circle-check"></i>
+        </div>
+        <div class="container-2">
+            <p id="status-block">Success</p>
+            <p id="message-block">Data Updates in database</p>
+        </div>
+        <button id="close-toast" onclick="closeToast()">
+            &times;
+        </button>
+    </div>
+
+</div>
+<!-- /Toast message -->
+
+
   <!-- Main Site -->
   <main id="site-main">
     <div class="container">
@@ -13,7 +35,7 @@
         </div>
         <div class="form-title text-center">
             <h2 class="text-dark">Update User</h2>
-            <span class="text-light">Use the below form to Update an account</span>
+            <span>Use the below form to Update an account</span>
         </div>
 
         <!-- add user form -->
@@ -21,16 +43,28 @@
  <form method="POST" id="update_user">
     <div class="new_user">
         <div class="form-group">
-            <label for="name" class="text-light">Name</label>
+            <label for="name">Name</label>
             <input type="hidden" name="id" value="<%= user._id %>">
-            <input type="text" name="name" value="<%= user.name %>" placeholder="Mark Stoenis">
+            <input type="text" name="name" value="<%= user.name %>" placeholder="FirstName MiddleName LastName" required>
         </div>
         <div class="form-group">
-            <label for="Email" class="text-light">Email</label>
-            <input type="text" name="email" value="<%= user.email%>" placeholder="example@gmail.com">
+            <label for="Email">Email</label>
+            <input type="text" name="email" value="<%= user.email%>" placeholder="example@gmail.com" required>
         </div>
         <div class="form-group">
-            <label for="gender" class="text-light">Gender</label>
+            <label for="Course">Course</label>
+            <input type="text" name="course" value="<%= user.course%>" placeholder="Information Technology" required>
+        </div>
+        <div class="form-group">
+            <label for="Course-year">Course-year</label>
+            <input type="text" name="courseYear" value="<%= user.courseYear%>" placeholder="3" required>
+        </div>
+        <div class="form-group">
+            <label for="seatNumber" >Seat number</label>
+            <input type="text" name="seatNumber" value="<%= user.seatNumber%>" placeholder="S190248560" required>
+        </div>
+        <div class="form-group">
+            <label for="gender">Gender</label>
             <div class="radio inline">
                 <input type="radio" id="radio-2" name="gender" value="Male" <%= user.gender == 'Male' ? 'checked' : '' %>>
                 <label for="radio-2" class="radio-label">Male</label>
@@ -38,18 +72,6 @@
             <div class="radio inline">
                 <input type="radio" id="radio-3" name="gender" value="Female"  <%= user.gender == 'Female' ? 'checked' : '' %> >
                 <label for="radio-3" class="radio-label">Female</label>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="gender" class="text-light">Status</label>
-            <div class="radio inline">
-                <input type="radio" id="radio-4" name="status" value="Active" <%= user.status == 'Active' ? 'checked' : '' %> >
-                <label for="radio-4" class="radio-label">Active</label>
-            </div>
-            <div class="radio inline">
-                <input type="radio" id="radio-5" name="status" value="Inactive" <%= user.status == 'Inactive' ? 'checked' : '' %> >
-                <label for="radio-5" class="radio-label">Inactive</label>
             </div>
         </div>
 

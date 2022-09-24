@@ -4,6 +4,26 @@
 <!-- /include header -->
 
 
+<!-- Toast message -->
+
+    <div class="toast-wrap">
+        
+        <div class="toast" id="toast">
+            <div class="container-1">
+                <i id="icon-block" class="fa-regular fa-circle-check"></i>
+            </div>
+            <div class="container-2">
+                <p id="status-block">Success</p>
+                <p id="message-block">Data inserted in database</p>
+            </div>
+            <button id="close-toast" onclick="closeToast()">
+                &times;
+            </button>
+        </div>
+
+    </div>
+<!-- /Toast message -->
+
     <!-- Main Site -->
     <main id="site-main">
         <div class="container">
@@ -22,7 +42,8 @@
                             <th>Name</th>
                             <th>@Email</th>
                             <th>Gender</th>
-                            <th>Status</th>
+                            <th>Seat number</th>
+                            <th>Course & Year</th>
                             <th>Action</th>
                         </tr>
                     </thead>
