@@ -14,7 +14,7 @@ var schema = new mongoose.Schema({
         type: String,
         require: true,
     },
-    courseYear: {
+    currentcourseYear: {
         type: Number,
         require: true
     },
@@ -24,6 +24,36 @@ var schema = new mongoose.Schema({
         unique: true
     },
     gender: String,
+    dob: {
+        type: Date,
+        require: true,
+        unique: true
+    },
+    phoneNumber: {
+        type: Number,
+        require: true,
+        unique: true
+    },
+    Address: {
+        type: String,
+        require: true,
+        unique: true
+    },
+    Percentage: {
+        type: Number,
+        require: true,
+        unique: true
+    },
+    AdmissionType: {
+        type: String,
+        require: true,
+        unique: true
+    },
+    Category: {
+        type: String,
+        require: true,
+        unique: true
+    },
 })
 
 const Userdb = mongoose.model('userdb',schema)

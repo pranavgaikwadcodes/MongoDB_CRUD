@@ -14,9 +14,15 @@ exports.create = (req,res) => {
         name: req.body.name,
         email: req.body.email,
         course: req.body.course,
-        courseYear: req.body.courseYear,
+        currentcourseYear: req.body.currentcourseYear,
         seatNumber: req.body.seatNumber,
         gender: req.body.gender,
+        dob: req.body.dob,
+        phoneNumber: req.body.phoneNumber,
+        Address: req.body.Address,
+        Percentage: req.body.Percentage,
+        AdmissionType: req.body.AdmissionType,
+        Category: req.body.Category,
     })
 
     //save user in database

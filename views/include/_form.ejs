@@ -4,25 +4,24 @@
         <div class="form-group">
             <label for="name" >Full Name</label>
             <input type="hidden" name="id" value="">
-            <input type="text" name="name" value="" placeholder="FirstName MiddleName LastName" required>
-        </div>
-        <div class="form-group">
+            <input type="text" name="name" value="" placeholder="Student Full Name" required>
+        
             <label for="Email" >Email</label>
             <input type="text" name="email" value="" placeholder="example@gmail.com" required>
         </div>
+
         <div class="form-group">
             <label for="Course" >Course</label>
-            <input type="text" name="course" value="" placeholder="Information Technology" required>
+            <input type="text" name="course" value="" placeholder="(Eg : Information Technology)" required>
+        
+            <label for="currentcourseYear" >Current-Course-Year</label>
+            <input type="text" name="currentcourseYear" value="" placeholder="3" required>
         </div>
-        <div class="form-group">
-            <label for="Course-year" >Course-Year</label>
-            <input type="text" name="courseYear" value="" placeholder="3" required>
-        </div>
+
         <div class="form-group">
             <label for="seatNumber" >Seat number</label>
-            <input type="text" name="seatNumber" value="" placeholder="S190248560" required>
-        </div>
-        <div class="form-group">
+            <input type="text" name="seatNumber" value="" placeholder="--- ---- ---" required>
+        
             <label for="gender" >Gender</label>
             <div class="radio inline">
                 <input type="radio" id="radio-2" name="gender" value="Male">
@@ -33,18 +32,39 @@
                 <label for="radio-3" class="radio-label">Female</label>
             </div>
         </div>
-
-        <!-- <div class="form-group">
-            <label for="gender" >Status</label>
-            <div class="radio inline">
-                <input type="radio" id="radio-4" name="status" value="Active" >
-                <label for="radio-4" class="radio-label">Active</label>
-            </div>
-            <div class="radio inline">
-                <input type="radio" id="radio-5" name="status" value="Inactive" >
-                <label for="radio-5" class="radio-label">Inactive</label>
-            </div>
-        </div> -->
+        <div class="form-group">
+            <label for="dob" >Date Of Birth</label>
+            <input type="date" name="dob" value="" placeholder="--/--/----" required>
+        
+            <label for="phoneNumber" >Phone Number</label>
+            <input type="text" name="phoneNumber" value="" placeholder="Phone no." required>
+        </div>
+        <div class="form-group">
+            <label for="Address" >Address</label>
+            <input type="text" name="Address" value="" placeholder="Address...(eg: Pune, Pimpri , etc)" required>
+        </div>
+        <div class="form-group">
+            <label for="Percentage" >Percentage</label>
+            <input type="text" name="Percentage" value="" placeholder="100 (without ' % ')" required>
+        </div>
+        <div class="form-group">
+            <label for="AdmissionType" >Admission Type</label>
+            <select name="AdmissionType" id="AdmissionType">
+                <option value="" selected disabled>Select Admission Type</option>
+                <option value="govQuota(cap)">govQuota(cap)</option>
+                <option value="TFWS">TFWS</option>
+                <option value="Management">Management</option>
+            </select>
+        
+            <label for="Category" >Category</label>
+            <select name="Category" id="Category">
+                <option value="" selected disabled>Select Category</option>
+                <option value="General">General</option>
+                <option value="OBC">OBC</option>
+                <option value="SC/ST">SC/ST</option>
+                <option value="NT">NT</option>
+            </select>
+        </div>
 
         <div class="form-group">
             <button type="submit" class="btn text-dark update">Save</button>
