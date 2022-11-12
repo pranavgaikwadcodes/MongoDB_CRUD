@@ -1,4 +1,3 @@
-var Userdb = require('../model/model')
 var StudentDB = require('../model/student')
 var AdminDB = require('../model/admin')
 
