@@ -2,7 +2,7 @@
 
         <div class="content">
             <div class="Title" style="margin-bottom: 50px;">
-                Add New Record
+                Update Record
                 <div class="message" id="message">
                     <p id="status-block">Data Updated Sucessfully</p>
                     <button id="close-toast" onclick="closeToast()">
@@ -11,48 +11,6 @@
                 </div>
             </div>
 
-            <!-- <form method="POST" id="update_user">
-                <div class="new_user">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="hidden" name="id" value="<%= user._id %>">
-                        <input type="text" name="name" value="<%= user.name %>" placeholder="FirstName MiddleName LastName" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="Email">Email</label>
-                        <input type="text" name="email" value="<%= user.email%>" placeholder="example@gmail.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="Course">Course</label>
-                        <input type="text" name="course" value="<%= user.course%>" placeholder="Information Technology" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="Course-year">Course-year</label>
-                        <input type="text" name="courseYear" value="<%= user.currentcourseYear%>" placeholder="3" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="seatNumber" >Seat number</label>
-                        <input type="text" name="seatNumber" value="<%= user.seatNumber%>" placeholder="S190248560" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="gender">Gender</label>
-                        <div class="radio inline">
-                            <input type="radio" id="radio-2" name="gender" value="Male" <%= user.gender == 'Male' ? 'checked' : '' %>>
-                            <label for="radio-2" class="radio-label">Male</label>
-                        </div>
-                        <div class="radio inline">
-                            <input type="radio" id="radio-3" name="gender" value="Female"  <%= user.gender == 'Female' ? 'checked' : '' %> >
-                            <label for="radio-3" class="radio-label">Female</label>
-                        </div>
-                    </div>
-            
-                    <div class="form-group">
-                        <button type="submit" class="btn text-dark update">Save</button>
-                    </div>
-            
-                </div>
-            </form> -->
-                   
             <!-- form handling -->
             <form method="POST" id="update_user">
                 <div class="new_user">
