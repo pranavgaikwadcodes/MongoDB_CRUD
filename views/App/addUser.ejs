@@ -1,0 +1,23 @@
+<%- include('_header') %>
+
+        <div class="content">
+            <div class="Title" style="margin-bottom: 50px;">
+                Add New Record
+                <div class="message" id="message">
+                    <p id="status-block">Data Inserted Sucessfully</p>
+                    <button id="close-toast" onclick="closeToast()">
+                        &times;
+                    </button>
+                </div>
+            </div>
+
+            <!-- add user form -->
+            <%- include('../include/_form') %>
+
+        </div>
+
+    </div>
+
+<!-- include footer -->
+<%- include('../include/_footer') %>
+<!-- /include footer -->

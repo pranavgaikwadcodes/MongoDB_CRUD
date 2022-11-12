@@ -25,7 +25,7 @@
 
 * {
     padding: 0;
-    margin: 10px;
+    margin: 0;
     box-sizing: border-box;
 }
 
@@ -337,3 +337,10 @@ table{
     color: #656565;
     cursor: pointer;
 }
+
+
+.lableClass{
+    margin-left: 10px;
+    margin-right: 5px;
+}
+

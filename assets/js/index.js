@@ -70,36 +70,96 @@ if(window.location.pathname == "/"){
 // js for toast message
 
 let x;
-let toast = document.getElementById('toast');
-let toastWrap = document.getElementById('toast-wrap');
-
-let iconBlock = document.getElementById('icon-block')
-let messageBlock = document.getElementById('message-block')
+let messageClass = document.getElementById('message');
 let statusBlock = document.getElementById('status-block')
 
 function showToast(message) {
 
     if(message !== 'success'){
-        iconBlock.classList.replace("fa-circle-check","fa-circle-xmark")
-        iconBlock.style.color = "red"
-        statusBlock.textContent = 'Error'
+        messageClass.style.display = "flex"
+        messageClass.style.backgroundColor = 'rgb(255, 190, 190)'
+        messageClass.style.color = '#fff'
+        messageClass.style.borderColor = 'red'
+        statusBlock.textContent = 'Some Error Occured'
         statusBlock.style.color = "red"
-        messageBlock.textContent = 'Something went wrong! Try again.'
-        toast.style.borderLeft = "8px solid red"
     }
 
     clearTimeout(x);
-    toastWrap.style.display = "block"
-    // toast.style.transform = "translateX(0)";
+    messageClass.style.display = "flex"
     x = setTimeout(() => {
-        // toast.style.transform = "translateX(420px)";
-        toastWrap.style.display = "none"
-        // location.reload()
+        messageClass.style.display = "none"
     },3000)
     
 }
 
 function closeToast(){
-    // toast.style.transform = "translateX(420px)";
-    toastWrap.style.display = "none"
+    messageClass.style.display = "none"
 }
+
+
+
+// Extras
+// delete
+if(window.location.pathname == "/dashboard"){
+    $ondelete = $(".table tbody td a.delete")
+    $ondelete.click(function() {
+        var id = $(this).attr('data-id')
+
+        var request = {
+            "url" : `http://localhost:3000/api/dashboard/${id}`,
+            "method" : 'DELETE'
+        }
+
+        if(confirm("Do you want to delete this record ? ")){
+            $.ajax(request).done(function(response){
+                // alert('data Deleted successfully!')
+                location.reload()
+            })
+        }
+    })
+}
+
+function deleteThis(id) {
+    // $ondelete = $(".table tbody td a.delete")
+    // var id = $(this).attr('data-id')
+
+    var request = {
+        "url" : `http://localhost:3000/api/dashboard/${id}`,
+        "method" : 'DELETE'
+    }
+
+    if(confirm("Do you want to delete this record ? ")){
+        $.ajax(request).done(function(response){
+            // alert('data Deleted successfully!')
+            location.reload()
+        })
+    }
+}
+
+
+
+        // update admin
+        $("#updateAdmin").submit(function(event){
+            event.preventDefault();
+
+            var unindexed_array = $(this).serializeArray()
+
+            var data = {}
+            
+            $.map(unindexed_array, function(n,i){
+                data[n['name']] = n['value']
+            })
+            
+            console.log(data)
+            
+            var request = {
+                "url" : `http://localhost:3000/api/profile/${data.id}`,
+                "method" : 'PUT',
+                "data" : data
+            }
+
+
+            $.ajax(request).done(function(response){
+            })
+
+        })

@@ -4,39 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HCI Assignment 5 / login</title>
+    <title>Document</title>
 
+
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/styleNew.css">
+
 </head>
 <body>
-    <!-- Login page -->
+
+
 
     <div class="container">
-        <form action="/" method="post" id="loginAdmin" >
-            <div class="logo">
-                <img src="img/logo.jpg" alt="Logo">
-            </div>
 
-            <div class="inputs">
-                <input type="text" name="username" id="username" placeholder="Username" autocomplete="off" required>
-                <input type="password" name="password" id="password" placeholder="Password" autocomplete="off" required>
-            </div>
-            <div class="buttons">
-                <button type="submit">
-                    Login
-                    <span class="material-symbols-outlined">
-                        arrow_circle_right
-                    </span>
-                </button>
-            </div>
-        </form>
-    </div>
-
+        <div class="Nav">
+            <%- include('_sideNav') %> 
     
-<!-- include footer -->
-<%- include('include/_footer') %>
-<!-- /include footer -->
+            <div class="topNavbar">
+                <!-- <div class="notificationBtn">
+                    <span class="material-symbols-outlined">
+                        notifications
+                    </span>
+                </div> -->
+                <div class="accountLogo">
+                    <a href="profile">
+                        <img src="img/logo2.jpg" alt="Account" srcset="">
+                    </a>
+                </div>
+            </div>
+        </div>

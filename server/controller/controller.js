@@ -1,4 +1,6 @@
 var Userdb = require('../model/model')
+var StudentDB = require('../model/student')
+var AdminDB = require('../model/admin')
 
 // create and save new user
 exports.create = (req,res) => {
@@ -10,7 +12,7 @@ exports.create = (req,res) => {
     }
 
     // new user 
-    const user = new Userdb({
+    const user = new StudentDB({
         name: req.body.name,
         email: req.body.email,
         course: req.body.course,
@@ -45,7 +47,7 @@ exports.find = (req,res) => {
     if(req.query.id){
         const id = req.query.id
 
-        Userdb.findById(id)
+        StudentDB.findById(id)
             .then(data => {
                 if(!data){
                     res.status(404)
@@ -65,7 +67,7 @@ exports.find = (req,res) => {
             })
     }
     else{
-        Userdb.find()
+        StudentDB.find()
         .then(user => {
             res.send(user);
         })
@@ -89,7 +91,7 @@ exports.update = (req,res) => {
     }
 
     const id = req.params.id
-    Userdb.findByIdAndUpdate(id, req.body, {useFindAndModify: false})
+    StudentDB.findByIdAndUpdate(id, req.body, {useFindAndModify: false})
         .then(data =>{
             if(!data){
                 res.status(404)
@@ -111,7 +113,7 @@ exports.update = (req,res) => {
 exports.delete = (req,res) => {
 
     const id = req.params.id
-    Userdb.findByIdAndDelete(id)
+    StudentDB.findByIdAndDelete(id)
         .then(data => {
             if(!data){
                 res.status(404)
@@ -132,4 +134,61 @@ exports.delete = (req,res) => {
                 })
         })
 
+}
+
+
+
+// Update admin Profile
+exports.updateProfile = (req,res) => {
+    if(!req.body){
+        return res
+            .status(400)
+            .send({
+                message: 'Data to be updated cannot be empty'
+            })
+    }
+
+    const id = req.params.id
+    AdminDB.findByIdAndUpdate(id, req.body, {useFindAndModify: false})
+        .then(data =>{
+            if(!data){
+                res.status(404)
+                    .send({message: `Cannot update user with ${id}.`})
+            }
+            else{
+                res.send(data)
+            }
+        })
+        .catch(err => {
+            res.status(500)
+                .send({
+                    message: err.message | 'Some error occurred'
+                })
+        })
+}
+
+// retrive/return a single/all user
+exports.findAdmin = (req,res) => {
+    
+    const userName = AdminDB.findOne({username:'admin'});
+
+    AdminDB.findOne({username:'admin'})
+            .then(data => {
+                if(!data){
+                    res.status(404)
+                        .send({
+                            message: `No record found with ${id}`
+                        })
+                }
+                else{
+                    res.send(data)
+                }
+            })
+            .catch(err => {
+                res.status(500)
+                    .send({
+                        message: err.message | "Error occured while fetching record."
+                    })
+            })
+    
 }

@@ -1,0 +1,35 @@
+<%- include('_header') %> 
+
+        <div class="content">
+            <div class="Title">All Records</div>
+
+            <div class="tableContent">
+                    
+                    <table class="tftable" border="1">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>@Email</th>
+                                <th>Gender</th>
+                                <th>Seat number</th>
+                                <th>Course & Year</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        
+                        <tbody>
+                            <%- include('../include/_show') %> 
+                        </tbody>
+                    </table>
+                    
+                    
+            </div>
+
+        </div>
+
+    </div>
+
+<!-- include footer -->
+<%- include('../include/_footer') %>
+<!-- /include footer -->

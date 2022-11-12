@@ -5,14 +5,24 @@
     <td><%= users[i].email %></td>
     <td><%= users[i].gender %></td>
     <td><%= users[i].seatNumber %></td>
-    <td><%= users[i].course %> ( <%= users[i].courseYear %> )</td>
+    <td><%= users[i].course %> </td>
     <td>
-        <a href="/update-user?id=<%= users[i]._id%>" class="btn update">
-            <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
-        </a>
-        <a class="btn delete" data-id=<%= users[i]._id%> >
-            <span class="text-gradient" style="color: red;"><i class="fas fa-times"></i></span>
-        </a>
+        <div style="
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center; "
+        >
+            <a href="/updateUser?id=<%= users[i]._id%>" class="btn update" title="Edit this record ?">
+                <span class="material-symbols-outlined">
+                    edit
+                </span>
+            </a>
+            <a class="btn delete" data-id=<%= users[i]._id%> onclick="deleteThis('<%= users[i]._id%>')">
+                <span class="material-symbols-outlined"  title="Delete this record ?" style="color: rgb(183, 3, 3) !important; cursor: pointer;">
+                    delete_forever
+                </span>
+            </a>
+        </div>
     </td>
 </tr>
 <% } %>

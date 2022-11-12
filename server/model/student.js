@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-var schema = new mongoose.Schema({
+var Studentschema = new mongoose.Schema({
     name: {
         type: String,
         require: true
@@ -25,7 +25,7 @@ var schema = new mongoose.Schema({
     },
     gender: String,
     dob: {
-        type: Date,
+        type: String,
         require: true,
         unique: true
     },
@@ -56,6 +56,7 @@ var schema = new mongoose.Schema({
     },
 })
 
-const Userdb = mongoose.model('userdb',schema)
 
-module.exports = Userdb
+const StudentDb = mongoose.model('studentdb',Studentschema)
+
+module.exports = StudentDb
