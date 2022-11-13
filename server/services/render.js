@@ -2,7 +2,7 @@ const axios = require('axios');
 
 
 exports.add_user = (req, res) =>{
-    res.render('add_user');
+    res.render('App/addUser');
 }
 
 exports.update_user = (req,res) => {
